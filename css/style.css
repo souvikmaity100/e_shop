@@ -1,0 +1,912 @@
+/* import google front nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Rubik&family=Ubuntu:ital,wght@0,300;0,400;1,300&family=Varela+Round&display=swap');
+
+
+/* root variables */
+:root{
+    --main-color:#2980b9;
+    --light-bg: #f5f5f5;
+    --light-color: #777;
+    --red:#e74c3c;
+    --orenge:#f39c12;
+    --black:#444;
+    --white:#fff;
+    --border:0.2rem solid #535353;
+    --light-border:0.2rem solid var(--black);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+
+/* set default style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+*::selection{
+    color: var(--white);
+    background-color: var(--main-color);
+}
+html{
+    font-size: 62%;
+    overflow-x: hidden;
+}
+body{
+    background-color: var(--light-bg);
+}
+.empty{
+    text-align: center;
+    border: var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--white);
+    padding: 1.5rem;
+    width: 100%;
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--red);
+    box-shadow: var(--box-shadow);
+}
+section{
+    max-width: 1250px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+
+/* coustomize scroll bar */
+::-webkit-scrollbar{
+    width: 1rem;
+    height: 0.5rem;
+}
+::-webkit-scrollbar-track{
+    background-color: none;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+
+/* btn */
+.btn,.delete-btn,.option-btn{
+    display: block;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    cursor:pointer;
+    font-size: 1.8rem;
+    color: var(--white);
+    padding: 1rem 3rem ;
+    text-transform: capitalize;
+    text-align: center;
+    transition: 0.2s linear;
+}
+.btn{
+    background-color: var(--main-color);
+}
+.delete-btn{
+    background-color: var(--red);
+}
+.option-btn{
+    background-color: var(--orenge);
+}
+.btn:hover,.delete-btn:hover,.option-btn:hover{
+    background-color: var(--black);
+}
+.flex-btn{
+    display: flex;
+    gap: 1rem;
+}
+.heding{
+    font-size: 3.2rem;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+.disabled{
+    user-select: none;
+    pointer-events: none;
+    opacity: 0.5;
+}
+
+
+/* meaasge and alerts */
+.message{
+    position: static;
+    top: 0;
+    max-width: 1200px;
+    margin:0 auto;
+    background: var(--light-bg);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.message span{
+    font-size: 2rem;
+    color: var(--black);
+}
+.message i{
+    font-size: 2.5rem;
+    color: var(--red);
+    cursor: pointer;
+}
+.message i:hover{
+    color: var(--black);
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------_header.php section--------------- */
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.header .flex .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+.header .flex .logo span{
+    color: var(--main-color);
+}
+.header .flex .navbar a{
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: var(--black);
+}
+.header .flex .navbar a:hover{
+    color: var(--main-color);
+}
+.header .flex .icons > *{
+    font-size: 2.2rem;
+    cursor: pointer;
+    margin-left: 1.2rem;
+    color: var(--light-color);
+    transition: 0.1s linear;
+}
+.header .flex .icons > *:hover{
+    color: var(--light-color);
+}
+.header .flex .icons #heart:hover{
+    color: var(--red);
+}
+.header .flex .icons #shopping-cart:hover{
+    color: var(--orenge);
+}
+.header .flex .icons .fa-user:hover{
+    color: var(--main-color);
+}
+.header .flex .profile{
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    padding-top: 1rem;
+    width: 30rem;
+    display: none;
+    animation: fadeIn 0.2s linear;
+}
+.header .flex .profile #user_name{
+    text-transform: capitalize;
+}
+.header .flex .active{
+    display: inline-block;
+}
+
+@keyframes fadeIn{
+    0%{
+        transform: translateY(1rem);
+    }
+}
+
+.header .flex .profile p{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--black);
+}
+#menu-btn{
+    display: none;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------_footer.php section--------------- */
+.footer{
+    background-color: var(--white);
+}
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 2rem;
+    align-items: flex-start;
+}
+.footer .box-container .box h3{
+    color: var(--black);
+    font-size: 2.5rem;
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+.footer .box-container .box a{
+    display: block;
+    padding: 1rem 0;
+    color: var(--light-color);
+    font-size: 1.7rem;
+}
+.footer .box-container .box a i{
+    padding-right: 0.4rem;
+    transition: 0.2s linear;
+    color: var(--main-color);
+}
+.footer .box-container .box a:hover{
+    color: var(--main-color);
+}
+.footer .box-container .box a:hover i{
+    padding-right: 1rem;
+}
+.footer .credit{
+    padding: 2.5rem;
+    text-align: center;
+    color: var(--black);
+    padding-bottom: 3rem;
+    font-size: 2rem;
+    border-top: var(--border);
+}
+.footer .credit span{
+    color: var(--main-color);
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------home.php section--------------- */
+/* ------------home swiper section-------------- */
+.home-bg{
+    background: url(../images/home-bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding: 2rem;
+}
+.home-bg .slide{
+    padding-top: 3rem;
+    padding-bottom: 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    align-items: center;
+}
+.home-bg .slide .image{
+    flex: 1 1 40rem;
+}
+.home-bg .slide .image img{
+    width: 100%;
+    height: 40rem;
+    object-fit: contain;
+}
+.home-bg .slide .content{
+    flex: 1 1 40rem;
+}
+.home-bg .slide .content span{
+    color: var(--white);
+    font-size: 2rem;
+}
+.home-bg .slide .content h3{
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    text-transform: capitalize;
+    font-size: 4rem;
+    color: var(--white);
+}
+.home-bg .slide .content .btn{
+    display: inline-block;
+    width: auto;
+}
+.swip-btn{
+    opacity: 0.1;
+    transition: 0.2s linear;
+}
+.swip-btn:hover{
+    opacity: 0.8;
+}
+
+/* ------------home category section-------------- */
+.home-category .category-slider{
+    padding-bottom: 5rem;
+}
+.home-category .slide{
+    display: inline-block;
+    text-align: center;
+    border-radius: 0.5rem;
+    border: var(--border);
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    transition: 0.2s linear;
+}
+.home-category .slide img{
+    height: 9rem;
+    width: 9rem;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.home-category .slide h3{
+    font-size: 2rem;
+    color: var(--black);
+}
+.home-category .slide:hover{
+    background-color: var(--black);
+}
+.home-category .slide:hover img{
+    filter: invert();
+}
+.home-category .slide:hover h3{
+    color: var(--white);
+}
+
+/* ------------home products section-------------- */
+.home-products .slide{
+    background-color: var(--white);
+    border: var(--border);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 5rem;
+}
+.home-products .slide .fa-eye,
+.home-products .slide .fa-heart{
+    position: absolute;
+    top: 1rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    font-size: 2.5rem;
+    line-height: 4.2rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.home-products .slide .fa-eye{
+    left: -10rem;
+}
+.home-products .slide .fa-heart{
+    right: -10rem;
+}
+.home-products .slide:hover .fa-eye{
+    left: 1rem;
+}
+.home-products .slide:hover .fa-heart{
+    right: 1rem;
+}
+.home-products .slide .fa-eye:hover,
+.home-products .slide .fa-heart:hover{
+    color: var(--white);
+    background-color: var(--black);
+}
+.home-products .slide .image{
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.home-products .slide .name{
+    font-size: 2rem;
+    color: var(--black);
+}
+.home-products .slide .flex{
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+}
+.home-products .slide .flex .price{
+    font-size: 2rem;
+    color: var(--main-color);
+}
+.home-products .slide .flex .qty{
+    font-size: 1.7rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 1.2rem 1.4rem;
+    color: var(--black);
+    width: 7rem;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------login.php section--------------- */
+.form-container form{
+    max-width: 50rem;
+    margin:0 auto;
+    border: var(--border);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    padding: 2rem;
+}
+.form-container form .box{
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    width: 100%;
+    color: var(--black);
+    padding: 1.4rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--light-bg);
+}
+.form-container form h3{
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+.form-container form p{
+    text-align: center;
+    font-size: 1.7rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    color: var(--light-color);
+}
+
+.form-container textarea{
+    height: 15rem;
+    resize: none;
+}
+
+/* --------------------------------------------------------------------- */
+/* ------------------------register.php section--------------- */
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------category.php section--------------- */
+.products .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    gap: 1.5rem;
+    align-items: flex-start;
+    justify-content: center;
+}
+.products .box-container .box{
+    background-color: var(--white);
+    border: var(--border);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+.products .box-container .box .fa-eye,
+.products .box-container .box .fa-heart{
+    position: absolute;
+    top: 1rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    font-size: 2.5rem;
+    line-height: 4.2rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.products .box-container .box .fa-eye{
+    left: -10rem;
+}
+.products .box-container .box .fa-heart{
+    right: -10rem;
+}
+.products .box-container .box:hover .fa-eye{
+    left: 1rem;
+}
+.products .box-container .box:hover .fa-heart{
+    right: 1rem;
+}
+.products .box-container .box .fa-eye:hover,
+.products .box-container .box .fa-heart:hover{
+    color: var(--white);
+    background-color: var(--black);
+}
+.products .box-container .box .image{
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.products .box-container .box .name{
+    font-size: 2rem;
+    color: var(--black);
+}
+.products .box-container .box .flex{
+    display: flex;
+    margin: 1rem 0;
+    align-items: center;
+    justify-content: space-between;
+}
+.products .box-container .box .flex .price{
+    font-size: 2rem;
+    color: var(--main-color);
+}
+.products .box-container .box .flex .qty{
+    font-size: 1.7rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 1.2rem 1.4rem;
+    color: var(--black);
+    width: 7rem;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------quick_view.php section--------------- */
+.quick-view .box{
+    background-color: var(--white);
+    border: var(--border);
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 2rem;
+    box-shadow: var(--box-shadow);
+}
+.quick-view .box .main-image{
+    flex: 1 1 40rem;
+}
+.quick-view .box .content{
+    flex: 1 1 40rem;
+}
+.quick-view .box .main-image .big-image img{
+    height: 25rem;
+    width: 100%;
+    object-fit: contain;
+}
+.quick-view .box .main-image .small-images{
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 0.5rem;
+}
+.quick-view .box .main-image .small-images img{
+    height: 7rem;
+    width: 8rem;
+    object-fit: contain;
+    cursor: pointer;
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    transition: 0.2s linear;
+}
+.quick-view .box .main-image .small-images img:hover{
+    box-shadow: var(--box-shadow);
+    transform: scale(0.9);
+}
+.quick-view .box .content .name{
+    font-size: 3rem;
+    color: var(--black);
+}
+.quick-view .box .content .flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+.quick-view .box .content .flex .price{
+    font-size: 2rem;
+    color: var(--main-color);
+}
+.quick-view .box .content .flex .qty{
+    font-size: 1.7rem;
+    padding: 1.2rem 1.4rem;
+    border: var(--border);
+    color: var(--black);
+    border-radius: 0.5rem;
+    width: 8rem;
+}
+.quick-view .box .content .details{
+    font-size: 1.8rem;
+    color: var(--light-color);
+    line-height: 2;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------about.php section--------------- */
+.about .row{
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.about .row .image{
+    flex: 1 1 40rem;
+}
+.about .row .content{
+    flex: 1 1 40rem;
+}
+.about .row .content h3{
+    font-size: 3rem;
+    color: var(--black);
+    text-transform: capitalize;
+}
+.about .row .content p{
+    font-size: 1.8rem;
+    padding: 1rem 0;
+    line-height: 2;
+    color: var(--light-color);
+}
+.about .row .content .btn{
+    display: inline-block;
+    width: auto;
+}
+
+/* ------------------------Client's reviews section--------------- */
+.reviews .slide{
+    background-color: var(--white);
+    border: var(--border);
+    border-radius: 0.5rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    margin-bottom:5rem ;
+}
+.reviews .slide img{
+    height: 10rem;
+    width: 10rem;
+    object-fit: contain;
+    border: var(--border);
+    border-radius: 500%;
+}
+.reviews .slide p{
+    font-size: 1.7rem;
+    color: var(--light-color);
+    padding: 1rem 0;
+    line-height: 2;
+}
+.reviews .slide .stars{
+    display: inline-block;
+    border: var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--light-bg);
+    padding: 0.5rem 1rem;
+}
+.reviews .slide .stars i{
+    font-size: 1.8rem;
+    color: var(--orenge);
+    margin: 0 .3rem;
+}
+.reviews .slide h3{
+    font-size: 2rem;
+    margin-top: 1rem;
+    text-transform: capitalize;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------search_page.php section--------------- */
+.search-form form{
+    display: flex;
+    gap: 1.2rem;
+}
+.search-form form .box{
+    font-size: 1.8rem;
+    padding: 1.4rem;
+    color: var(--black);
+    background-color: var(--white);
+    border: var(--border);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    width: 100%;
+}
+.search-form form .fa-search{
+    font-size: 2.5rem;
+    width: 6rem;
+    background-color: var(--main-color);
+    color: var(--white);
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.search-form form .fa-search:hover{
+    background-color: var(--black);
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------wishlist.php section--------------- */
+.wishlist-total{
+    margin: 0 auto;
+    margin-top: 2rem;
+    max-width: 50rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    padding: 2rem;
+    text-align: center;
+}
+.wishlist-total .grand-total{
+    font-size: 2.5rem;
+    color: var(--light-color);
+    margin-bottom: 1.8rem;
+}
+.wishlist-total .grand-total span{
+    color: var(--red);
+}
+.products .box-container .box  .fa-trash-can{
+    position: absolute;
+    top: 1rem;
+    height: 4.5rem;
+    width: 4.5rem;
+    font-size: 2.5rem;
+    line-height: 4.2rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    text-align: center;
+    background-color: var(--white);
+    color: var(--black);
+    cursor: pointer;
+    transition: 0.2s linear;
+}
+.products .box-container .box .fa-trash-can{
+    right: -10rem;
+}
+.products .box-container .box:hover .fa-trash-can{
+    right: 1rem;
+}
+.products .box-container .box .fa-trash-can:hover{
+    color: var(--white);
+    background-color: var(--red);
+    border-color: var(--red);
+}
+
+/* --------------------------------------------------------------------- */
+/* ------------------------cart.php section--------------- */
+.products .box-container .box .flex .qty-box{
+    border: var(--border);
+    border-radius: 0.5rem;
+}
+.products .box-container .box .flex .qty-box input{
+    border:none;
+}
+.products .box-container .box .flex .fa-edit{
+    width: 5rem;
+    height: 5rem;
+    overflow: hidden;
+    background-color: var(--orenge);
+    color: var(--white);
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.products .box-container .box .flex .fa-edit:hover{
+    background-color: var(--black);
+}
+.products .box-container .sub-total{
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    color: var(--light-color);
+}
+.products .box-container .sub-total span{
+    color: var(--orenge);
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------checkout.php section--------------- */
+.checkout .display-orders{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: flex-start;
+}
+.checkout .display-orders p{
+    padding: 1rem 3rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    font-size: 2rem;
+    color: var(--black);
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+.checkout .display-orders p span{
+    color: var(--red);
+}
+.checkout .grand-total{
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 1rem 0;
+    font-size: 2.5rem;
+    color: var(--light-color);
+}
+.checkout .grand-total span{
+    color: var(--red);
+}
+.checkout form{
+    padding: 2rem;
+    border: var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+}
+.checkout form .flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.checkout form .flex .inputBox{
+    flex: 1 1 40rem;
+}
+.checkout form .flex .inputBox span{
+    font-size: 1.7rem;
+    color: var(--light-color);
+}
+.checkout form .flex .inputBox .box{
+    width: 100%;
+    border: var(--border);
+    border-radius: 0.5rem;
+    margin: 1rem 0;
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+    background-color: var(--light-bg);
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------order.php section--------------- */
+.show-orders .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+.show-orders .box-container .box{
+    padding: 2rem;
+    background-color: var(--white);
+    border: var(--border);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    flex: 1 1 40rem;
+    padding-top: 1rem;
+}
+.show-orders .box-container .box p{
+    margin: 1rem 0;
+    line-height: 1.5;
+    font-size: 2rem;
+    color: var(--black);
+}
+.show-orders .box-container .box p span{
+    color: var(--main-color);
+}
+
+
+
+
+
+

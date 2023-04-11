@@ -1,0 +1,537 @@
+/* import google front nunito */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&family=Rubik&family=Ubuntu:ital,wght@0,300;0,400;1,300&family=Varela+Round&display=swap');
+
+
+/* root variables */
+:root{
+    --main-color:#2980b9;
+    --light-bg: #f5f5f5;
+    --light-color: #777;
+    --red:#e74c3c;
+    --orenge:#f39c12;
+    --black:#444;
+    --white:#fff;
+    --border:0.2rem solid #535353;
+    --light-border:0.2rem solid var(--black);
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+
+/* set default style */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+    text-decoration: none;
+    outline: none;
+    border: none;
+}
+*::selection{
+    color: var(--white);
+    background-color: var(--main-color);
+}
+html{
+    font-size: 62%;
+    overflow-x: hidden;
+}
+body{
+    background-color: var(--light-bg);
+}
+.empty{
+    text-align: center;
+    border: var(--border);
+    border-radius: 0.5rem;
+    background-color: var(--white);
+    padding: 1.5rem;
+    width: 100%;
+    font-size: 2rem;
+    text-transform: capitalize;
+    color: var(--red);
+    box-shadow: var(--box-shadow);
+}
+
+
+/* coustomize scroll bar */
+::-webkit-scrollbar{
+    width: 1rem;
+    height: 0.5rem;
+}
+::-webkit-scrollbar-track{
+    background-color: none;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+}
+
+
+/* btn */
+.btn,.delete-btn,.option-btn{
+    display: block;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    width: 100%;
+    cursor:pointer;
+    font-size: 1.8rem;
+    color: var(--white);
+    padding: 1rem 3rem ;
+    text-transform: capitalize;
+    text-align: center;
+}
+.btn{
+    background-color: var(--main-color);
+}
+.delete-btn{
+    background-color: var(--red);
+}
+.option-btn{
+    background-color: var(--orenge);
+}
+.btn:hover,.delete-btn:hover,.option-btn:hover{
+    background-color: var(--black);
+}
+.flex-btn{
+    display: flex;
+    gap: 1rem;
+}
+.heding{
+    font-size: 3.2rem;
+    font-weight: bolder;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    color: var(--black);
+}
+
+
+/* meaasge and alerts */
+.message{
+    position: static;
+    top: 0;
+    max-width: 1200px;
+    margin:0 auto;
+    background: var(--light-bg);
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.message span{
+    font-size: 2rem;
+    color: var(--black);
+}
+.message i{
+    font-size: 2.5rem;
+    color: var(--red);
+    cursor: pointer;
+}
+.message i:hover{
+    color: var(--black);
+}
+
+/* --------------------------------------------------------------------- */
+/* ------------------------abmin_login.php section--------------- */
+section{
+    margin: 0 auto;
+    padding: 2rem;
+}
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 85vh;
+}
+.form-container form{
+    border-radius: 0.5rem;
+    border: var(--border);
+    box-shadow: var(--box-shadow);
+    background-color: var(--white);
+    padding: 2rem;
+    text-align: center;
+    width: 50rem;
+}
+.form-container form h3{
+    font-size: 2.5rem;
+    color: var(--black);
+    text-transform: uppercase;
+}
+.form-container form p{
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: var(--light-color);
+}
+.form-container form p span{
+    color: var(--orenge);
+}
+.form-container form .box{
+    width: 100%;
+    background-color: var(--light-bg);
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    margin: 1rem 0;
+    color: var(--black);
+    border: var(--border);
+    border-radius: 0.5rem;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------_abmin_header.php section--------------- */
+.header{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+.header .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+.header .flex .logo{
+    font-size: 2.5rem;
+    color: var(--black);
+}
+.header .flex .logo span{
+    color: var(--main-color);
+}
+.header .flex .navbar a{
+    margin: 0 1rem;
+    font-size: 2rem;
+    color: var(--black);
+}
+.header .flex .navbar a:hover{
+    color: var(--main-color);
+}
+.header .flex .icons > *{
+    font-size: 2.5rem;
+    cursor: pointer;
+    color: var(--light-color);
+    margin-left: 1.5rem;
+}
+.header .flex .icons > *:hover{
+    color: var(--main-color);
+}
+.header .flex .profile{
+    position: absolute;
+    top: 120%;
+    right: 2rem;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    padding-top: 1rem;
+    width: 30rem;
+    display: none;
+    animation: fadeIn 0.2s linear;
+}
+.header .flex .active{
+    display: inline-block;
+}
+
+@keyframes fadeIn{
+    0%{
+        transform: translateY(1rem);
+    }
+}
+
+.header .flex .profile p{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    text-align: center;
+    color: var(--black);
+}
+#menu-btn{
+    display: none;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------dashboard.php section--------------- */
+.dashboard .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr)) ;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+.dashboard .box-container .box{
+    text-align: center;
+    background-color: var(--white);
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    border-radius: 0.5rem;
+    padding: 1.7rem;
+}
+.dashboard .box-container .box h3{
+    font-size: 2.7rem;
+    color: var(--black);
+}
+.dashboard .box-container .box h3 span{
+    font-size: 2rem;
+}
+.dashboard .box-container .box p{
+    font-size: 1.8rem;
+    color: var(--light-color);
+    background-color: var(--light-bg);
+    padding: 1.4rem;
+    border-radius: 0.5rem;
+    border: var(--light-border);
+    margin: 1rem 0;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------abmin_register.php section--------------- */
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------products.php section--------------- */
+/* ------------------------Add products section--------------- */
+.add-products form{
+    margin: 0 auto;
+    max-width: 70rem;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+}
+.add-products form .flex{
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+.add-products form .flex .inputeBox{
+    flex: 1 1 30rem;
+}
+.add-products form .flex .inputeBox .box{
+    margin-top: 0.5rem;
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: var(--light-bg);
+    border: var(--border);
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+}
+.add-products form .flex .inputeBox span{
+    font-size: 2rem;
+    color: var(--light-color);
+}
+.add-products form .flex .inputeBox textarea{
+    height: 5.8rem;
+    resize: none;
+}
+/* ------------------------Show products section--------------- */
+.show-products .box-container{
+    display: grid;
+    gap: 1.3rem;
+    grid-template-columns: repeat(auto-fit, 33rem);
+    justify-content: center;
+    align-items: flex-start;
+}
+.show-products .box-container .box{
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.show-products .box-container .box img{
+    width: 100%;
+    height: 20rem;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+.show-products .box-container .box .name{
+    font-size: 2rem;
+    color: var(--black);
+}
+.show-products .box-container .box .price{
+    font-size: 2.5rem;
+    color: var(--main-color);
+    margin: 0.5rem 0;
+}
+.show-products .box-container .box .details{
+    font-size: 1.5rem;
+    color: var(--light-color);
+    margin: 0.5rem 0;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------update_product.php section--------------- */
+.update-product form{
+    margin: 0 auto;
+    max-width: 80rem;
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+}
+.update-product form .image-container .main-image img{
+    height: 20rem;
+    width: 100%;
+    object-fit: contain;
+}
+.update-product form .image-container .sub-images{
+    display: flex;
+    gap: 1.5rem;
+    margin: 1rem 0;
+    justify-content: center;
+}
+.update-product form .image-container .sub-images img{
+    border: var(--border);
+    height: 6rem;
+    width: 8rem;
+    object-fit: contain;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: 0.2s linear;
+}
+.update-product form .image-container .sub-images img:hover{
+    transform: scale(1.1);
+}
+.update-product form .box{
+    margin: 0.5rem 0;
+    width: 100%;
+    border-radius: 0.5rem;
+    background-color: var(--light-bg);
+    border: var(--border);
+    padding: 1.4rem;
+    font-size: 1.8rem;
+    color: var(--black);
+}
+.update-product form textarea{
+    height: 15rem;
+    resize: none;
+}
+.update-product form span{
+    font-size: 1.7rem;
+    color: var(--black);
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------placed_orders.php section--------------- */
+.placed-orders .box-container{
+    display: grid;
+    gap: 1.3rem;
+    grid-template-columns: repeat(auto-fit, 38rem);
+    justify-content: center;
+    align-items: flex-start;
+}
+.placed-orders .box-container .box{
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.placed-orders .box-container .box p{
+    margin: 0.5rem 0;
+    line-height: 2;
+    font-size: 1.5rem;
+    color: var(--black);
+}
+.placed-orders .box-container .box p span{
+    color: var(--main-color);
+}
+.placed-orders .box-container .box .drop-down{
+    margin: 1rem 0;
+    background-color: var(--light-bg);
+    padding: 0.7rem 1rem;
+    font-size: 1.5rem;
+    color: var(--black);
+    width: 100%;
+    border: var(--border);
+    border-radius: 0.5rem;
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------admins_accounts.php section--------------- */
+.admin-accounts .box-container{
+    display: grid;
+    gap: 1.3rem;
+    grid-template-columns: repeat(auto-fit, 38rem);
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.admin-accounts .box-container .box{
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.admin-accounts .box-container .box p{
+    margin: 0.5rem 0;
+    line-height: 2;
+    font-size: 1.5rem;
+    color: var(--black);
+}
+.admin-accounts .box-container .box p span{
+    color: var(--main-color);
+}
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------user_accounts.php section--------------- */
+
+
+/* --------------------------------------------------------------------- */
+/* ------------------------messages.php section--------------- */
+.messages .box-container{
+    display: grid;
+    gap: 1.3rem;
+    grid-template-columns: repeat(auto-fit, 38rem);
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+}
+.messages .box-container .box{
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    border: var(--border);
+    padding: 1.5rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.messages .box-container .box p{
+    margin: 0.5rem 0;
+    line-height: 2;
+    font-size: 1.5rem;
+    color: var(--black);
+}
+.messages .box-container .box p span{
+    color: var(--main-color);
+}
+.messages .box-container .box .time span{
+    color: var(--orenge);
+}
+
