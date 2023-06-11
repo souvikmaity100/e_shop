@@ -122,6 +122,10 @@
 
     <script>
         <?php include 'js/script.js'; ?>
+
+        window.onload = function() {
+            history.replaceState("", "", "cart.php");
+        }
     </script>
 
 </body>

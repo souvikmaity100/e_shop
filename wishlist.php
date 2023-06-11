@@ -113,6 +113,10 @@
 
     <script>
         <?php include 'js/script.js'; ?>
+
+        window.onload = function() {
+            history.replaceState("", "", "wishlist.php");
+        }
     </script>
 
 </body>

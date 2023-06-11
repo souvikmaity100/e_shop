@@ -282,7 +282,8 @@ section{
 /* ------------------------home.php section--------------- */
 /* ------------home swiper section-------------- */
 .home-bg{
-    background: url(../images/home-bg.png) no-repeat;
+    /* background: url(../images/home-bg.png) no-repeat; */
+    background: url(../images/home-bg-2.jpg) no-repeat;
     background-size: cover;
     background-position: center;
     padding: 2rem;
@@ -316,6 +317,9 @@ section{
     text-transform: capitalize;
     font-size: 4rem;
     color: var(--white);
+}
+.home-bg .slide .content h3,.home-bg .slide .content span{
+    text-shadow: 5px 5px 5px gray;
 }
 .home-bg .slide .content .btn{
     display: inline-block;

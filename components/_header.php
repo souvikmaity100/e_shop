@@ -11,14 +11,14 @@ if (isset($message)) {
 
 <header class="header">
     <section class="flex">
-        <a href="home.php" class="logo"><span>E</span>-Shop</a>
+        <a href="/e_shop/home.php" class="logo"><span>E</span>-Shop</a>
 
         <nav class="navbar">
-            <a href="home.php">Home</a>
-            <a href="about.php">About</a>
-            <a href="orders.php">Orders</a>
-            <a href="shop.php">Shop</a>
-            <a href="contact.php">Contact</a>
+            <a href="/e_shop/home.php">Home</a>
+            <a href="/e_shop/about.php">About</a>
+            <a href="/e_shop/orders.php">Orders</a>
+            <a href="/e_shop/shop.php">Shop</a>
+            <a href="/e_shop/contact.php">Contact</a>
         </nav>
 
         <div class="icons">

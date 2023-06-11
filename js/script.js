@@ -16,10 +16,6 @@ window.onscroll = ()=>{
     navbar.classList.remove('active');
     profile.classList.remove('active');
 }
-document.getElementsByTagName(h1).onclick = ()=>{
-    navbar.classList.remove('active');
-    profile.classList.remove('active');
-}
 
 
 let subImg = document.querySelectorAll('.quick-view .box .main-image .small-images img');
@@ -30,3 +26,4 @@ subImg.forEach(image =>{
         mainImg.src = src;
     }
 });
+
